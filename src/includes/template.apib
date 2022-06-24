@@ -141,6 +141,27 @@ Retrieves the ADL 1.4 operational template (OPT) identified by `template_id` ide
     + Body
 
 
+### Has template [HEAD /definition/template/adl1.4/{template_id}]
+
+Checks if a particular ADL 1.4 operational template (OPT) identified by `template_id` exists.
+
++ Parameters
+
+    + template_id: `Vital Signs` (string) - template identifier
+
++ Response 200
+
+  `200 OK` without body content is returned when the ADL 1.4 operational template (OPT) identified by `template_id` exists.
+
+    + Body
+
++ Response 404
+
+  `404 Not Found` is returned when the ADL 1.4 operational template (OPT) identified by `template_id` does not exist.
+
+    + Body
+
+
 ## ADL 2 TEMPLATE [/definition/template/adl2]
 
 Management of [AOM2](https://specifications.openehr.org/releases/AM/latest/AOM2.html#_templates) templates. 
@@ -293,3 +314,25 @@ If `version_pattern` is omitted, then the latest version of the operational temp
     `404 Not Found` is returned when a template with the specified `template_id` and `version_pattern` does not exist.
 
     + Body
+
+
+### Has template [HEAD /definition/template/adl2/{template_id}]
+
+Checks if a particular ADL2 operational template identified by `template_id` exists.
+
++ Parameters
+
+    + `template_id`: `openEHR-EHR-COMPOSITION.t_clinical_info_ds_sf.v1.0.0` (string) - template identifier
+
++ Response 200
+
+  `200 OK` without body content is returned when the ADL2 operational template identified by `template_id` exists.
+
+    + Body
+
++ Response 404
+
+  `404 Not Found` is returned when the ADL2 operational template identified by `template_id` does not exist.
+
+    + Body
+
