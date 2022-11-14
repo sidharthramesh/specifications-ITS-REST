@@ -1,10 +1,24 @@
 # See https://redocly.com/docs/cli/configuration/ for more information.
 
+#https://redocly.com/docs/cli/configuration/#fixed-properties
+apis:
+  ehr@v1:
+    root: reference/ehr.openapi.yaml
+  options@v1:
+    root: reference/options.openapi.yaml
+
+#lint:
+#  extends:
+#    - recommended
+#  rules:
+#    no-unused-components: error
 
 # https://redocly.com/docs/api-reference-docs/configuration/functionality/#featuresopenapi-schema
 features.openapi:
+  #  showConsole: true
   showObjectSchemaExamples: false
   schemaExpansionLevel: 0
+  #  pathInMiddlePanel: true
   scrollYOffset: 72
   nativeScrollbars: true
   htmlTemplate: development/redoc-template.html
@@ -12,7 +26,38 @@ features.openapi:
   # https://redocly.com/docs/api-reference-docs/configuration/theming/
   theme:
     colors:
+      #      primary:
+      #        main: "rgba(246, 20, 63, 1)"
+      #        light: "rgba(246, 20, 63, 0.42)"
+      #      http:
+      #        get: "rgba(0, 200, 219, 1)"
+      #        post: "rgba(28, 184, 65, 1)"
+      #        put: "rgba(255, 187, 0, 1)"
+      #        delete: "rgba(254, 39, 35, 1)"
       tonalOffset: 0.1
     sidebar:
       width: "300px"
       textColor: "#000000"
+#    rightPanel:
+#      backgroundColor: "rgba(55, 53, 71, 1)"
+#      textColor: "#f99"
+#    typography:
+#      code:
+#        backgroundColor: "rgba(38, 50, 56, 0.05)"
+#        color: "#ffffff !important"
+#        fontfamily: "Source Code Pro, monospace !important"
+#        fontSize: "13px !important"
+#      headings:
+#        fontFamily: "Audiowide, Roboto, sans-serif !important"
+#      fontFamily: "Sofia, Roboto, sans-serif !important"
+#      fontSize: "0.7rem"
+
+
+#  generateCodeSamples:
+#    languages:  # Array of language config objects; indicates in which languages to generate code samples.
+#      - lang: curl
+#      - lang: Node.js
+#      - lang: JavaScript
+#      - lang: PHP
+#      - lang: Python
+
