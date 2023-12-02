@@ -1,0 +1,75 @@
+openapi: 3.0.3
+info:
+  title: API Resources
+  version: latest
+  x-status: STABLE
+  x-spec: resources
+  contact:
+    name: Specifications Editorial Committee openEHR
+    url: 'https://specifications.openehr.org/'
+    email: info@openehr.org
+  license:
+    name: Creative Commons Attribution-NoDerivs 3.0 Unported
+    url: 'https://creativecommons.org/licenses/by-nd/3.0/'
+  description:
+    $ref: ./docs/ehr/Intro.md
+servers:
+  - url: 'https://{baseUrl}/v1'
+    description: An example openEHR server URL.
+    variables:
+      baseUrl:
+        default: openEHRSys.example.com
+        description: The (example) server base URL prefix providing openEHR services. This may contain server name, port and base path prefix.
+security: []
+paths: []
+tags:
+  - name: EHR_schema
+    x-displayName: EHR
+    description:
+      $ref: ./tags/EHR_schema.md
+  - name: EHR_STATUS_schema
+    x-displayName: EHR_STATUS
+    description:
+      $ref: ./tags/EHR_STATUS_schema.md
+  - name: COMPOSITION_schema
+    x-displayName: COMPOSITION
+    description:
+      $ref: ./tags/COMPOSITION_schema.md
+  - name: DIRECTORY_schema
+    x-displayName: DIRECTORY
+    description:
+      $ref: ./tags/DIRECTORY_schema.md
+  - name: CONTRIBUTION_schema
+    x-displayName: CONTRIBUTION
+    description:
+      $ref: ./tags/CONTRIBUTION_schema.md
+x-tagGroups:
+  - name: Resource schemas
+    tags:
+      - EHR_schema
+      - EHR_STATUS_schema
+      - COMPOSITION_schema
+      - DIRECTORY_schema
+      - CONTRIBUTION_schema
+components:
+  schemas:
+    UAbstractItemStructure:
+      $ref: ./schemas/data_structures/UAbstractItemStructure.yaml
+    UAbstractContentItem:
+      $ref: ./schemas/ehr/UAbstractContentItem.yaml
+    Ehr:
+      $ref: ./schemas/ehr/Ehr.yaml
+    EhrStatus:
+      $ref: ./schemas/ehr/EhrStatus.yaml
+    VersionedEhrStatus:
+      $ref: ./schemas/ehr/VersionedEhrStatus.yaml
+    Composition:
+      $ref: ./schemas/ehr/Composition.yaml
+    VersionedComposition:
+      $ref: ./schemas/ehr/VersionedComposition.yaml
+    Folder:
+      $ref: ./schemas/ehr/Folder.yaml
+    Contribution:
+      $ref: ./schemas/common/Contribution.yaml
+    NewContribution:
+      $ref: ./schemas/common/NewContribution.yaml

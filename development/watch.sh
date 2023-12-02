@@ -1,5 +1,5 @@
 case "${1:-}" in
-		overview|ehr|query|definition)
+		overview|ehr|query|definition|resources)
 			docker-compose run -d --rm -w "/spec/specifications" -p 80:80 -p 32201:32201 redocly preview-docs "$1".openapi.yaml -h 0.0.0.0 -p 80
 			;;
 		"")
