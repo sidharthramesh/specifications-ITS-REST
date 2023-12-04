@@ -189,3 +189,43 @@ Timezone SHOULD be only supplied when needed, otherwise the local timezone is as
 Any date, datetime or time value provided as part of the HTTP message body, when creating or updating a resource (e.g. a DV_DATE_TIME value inside the COMPOSITION content),
 will be preserved as it was sent by the client, and passed to the underlying backend engine as is.
 Retrieval or querying those resources SHOULD return date, datetime, or time values in the (original) format provided by underlying backend engine, avoiding any format change.
+
+
+# EHR resources
+
+## EHR
+<SchemaDefinition schemaRef="#/components/schemas/Ehr" />
+
+## EHR_STATUS
+<SchemaDefinition schemaRef="#/components/schemas/EhrStatus" />
+
+### VERSIONED_EHR_STATUS
+<SchemaDefinition schemaRef="#/components/schemas/VersionedEhrStatus" />
+
+### a VERSION of VERSIONED_EHR_STATUS
+<SchemaDefinition schemaRef="#/components/schemas/UVersionOfEhrStatus" />
+
+## COMPOSITION
+<SchemaDefinition schemaRef="#/components/schemas/Composition" />
+
+### CONTENT_ITEM
+<SchemaDefinition schemaRef="#/components/schemas/UContentItem" />
+
+### VERSIONED_COMPOSITION
+<SchemaDefinition schemaRef="#/components/schemas/VersionedComposition" />
+
+### a VERSION of VERSIONED_COMPOSITION
+<SchemaDefinition schemaRef="#/components/schemas/UVersionOfComposition" />
+
+## FOLDER
+<SchemaDefinition schemaRef="#/components/schemas/Folder" />
+
+
+# Structures
+
+## ITEM_STRUCTURE
+The following types are formally specified in the Reference Model as the [Item Structure Package](https://specifications.openehr.org/releases/RM/latest/data_structures.html#_item_structure_package).
+<SchemaDefinition schemaRef="#/components/schemas/UItemStructure" />
+
+
+# QUERY resources

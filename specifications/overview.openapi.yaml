@@ -39,13 +39,39 @@ tags:
       $ref: ./docs/overview/Resources.md
   - name: Options
     description: Retrieving system options and conformance information.
-x-tagGroups:
-  - name: Docs
-    tags:
-      - Glossary_and_conventions
-      - Requests_and_responses
-      - Resources
-  - name: Endpoints
-    tags:
-      - Options
+#x-tagGroups:
+#  - name: Docs
+#    tags:
+#      - Glossary_and_conventions
+#      - Requests_and_responses
+#      - Resources
+#  - name: Endpoints
+#    tags:
+#      - Options
 
+components:
+  schemas:
+    UAbstractItemStructure:
+      $ref: ./schemas/data_structures/UAbstractItemStructure.yaml
+    UAbstractContentItem:
+      $ref: ./schemas/ehr/UAbstractContentItem.yaml
+    Ehr:
+      $ref: ./schemas/ehr/Ehr.yaml
+    EhrStatus:
+      $ref: ./schemas/ehr/EhrStatus.yaml
+    VersionedEhrStatus:
+      $ref: ./schemas/ehr/VersionedEhrStatus.yaml
+    UVersionOfEhrStatus:
+      $ref: ./schemas/ehr/UVersionOfEhrStatus.yaml
+    Composition:
+      $ref: ./schemas/ehr/Composition.yaml
+    VersionedComposition:
+      $ref: ./schemas/ehr/VersionedComposition.yaml
+    UVersionOfComposition:
+      $ref: ./schemas/ehr/UVersionOfComposition.yaml
+    Folder:
+      $ref: ./schemas/ehr/Folder.yaml
+    Contribution:
+      $ref: ./schemas/common/Contribution.yaml
+    NewContribution:
+      $ref: ./schemas/common/NewContribution.yaml
