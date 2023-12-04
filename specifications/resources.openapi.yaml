@@ -43,14 +43,26 @@ tags:
     x-displayName: CONTRIBUTION
     description:
       $ref: ./tags/CONTRIBUTION_schema.md
+  - name: Query_schema
+    x-displayName: Query Execute
+    x-traitTag: true
+    description:
+      $ref: ./tags/Query_schema.md
+  - name: RESULT_SET_schema
+    x-displayName: RESULT_SET
+    description:
+      $ref: ./tags/RESULT_SET_schema.md
 x-tagGroups:
-  - name: Resource schemas
+  - name: EHR Schemas
     tags:
       - EHR_schema
       - EHR_STATUS_schema
       - COMPOSITION_schema
       - DIRECTORY_schema
       - CONTRIBUTION_schema
+  - name: QUERY Schemas
+      - Query_schema
+      - RESULT_SET_schema
 components:
   schemas:
     UAbstractItemStructure:
@@ -73,3 +85,5 @@ components:
       $ref: ./schemas/common/Contribution.yaml
     NewContribution:
       $ref: ./schemas/common/NewContribution.yaml
+    AdhocQueryExecute:
+      $ref: ./schemas/query/AdhocQueryExecute.yaml
