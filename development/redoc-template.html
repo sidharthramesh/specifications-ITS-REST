@@ -26,9 +26,17 @@
         div.api-info div:first-child {
             display: none;
         }
+        ul[role=menu] label {
+            padding-right: 7px;
+        }
+        ul[role=menu] label span:last-child {
+            width: calc(100% - 23px);
+        }
+        ul[role=menu] ul ul li label,
         ul[role=menu] ul ul ul li label {
             padding-left: 60px;
         }
+        ul[role=menu] > li > label > span,
         label[type=group] span {
             font-weight: bold;
         }
