@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: APIs Overview
+  title: Overview
   version: latest
   x-status: STABLE
   x-spec: overview
@@ -230,13 +230,7 @@ info:
     in this document are to be interpreted as described in [BCP 14](https://tools.ietf.org/html/bcp14) [[RFC 2119](https://tools.ietf.org/html/rfc2119)],
     [[RFC 8174](https://tools.ietf.org/html/rfc8174)] when, and only when, they appear in all capitals, as shown here.
 
-servers:
-  - url: https://{baseUrl}/v1
-    description: An example openEHR server URL.
-    variables:
-      baseUrl:
-        default: openEHRSys.example.com
-        description: The (example) server base URL prefix providing openEHR services. This may contain server name, port and base path prefix.
+servers: []
 security: []
 tags:
   - name: Glossary_and_conventions
@@ -735,77 +729,6 @@ tags:
       Any date, datetime or time value provided as part of the HTTP message body, when creating or updating a resource (e.g. a DV_DATE_TIME value inside the COMPOSITION content),
       will be preserved as it was sent by the client, and passed to the underlying backend engine as is.
       Retrieval or querying those resources SHOULD return date, datetime, or time values in the (original) format provided by underlying backend engine, avoiding any format change.
-  - name: Options
-    description: Retrieving system options and conformance information.
-paths:
-  /:
-    options:
-      operationId: options
-      summary: System Options and Conformance
-      description: |
-        The `OPTIONS` HTTP method allows a client to determine the options and/or requirements associated with a resource, service or with the system, without implying a resource action.
-        Services SHOULD respond to this method with at least appropriate HTTP codes, headers and potentially with a payload revealing more details about themselves.
-
-        Another use-case for this method is related to exposing service capabilities for a conformance manifest.
-      tags:
-        - Options
-      responses:
-        '200':
-          $ref: '#/components/responses/200_options'
+paths: {}
 components:
-  headers:
-    Allow:
-      description: |
-        The `Allow` header lists the set of methods supported.
-      schema:
-        type: string
-        example: GET, POST, PUT, DELETE, OPTIONS
-  schemas:
-    Options:
-      title: Options
-      type: object
-      properties:
-        solution:
-          type: string
-        solution_version:
-          type: string
-        vendor:
-          type: string
-        restapi_specs_version:
-          type: string
-        conformance_profile:
-          type: string
-        endpoints:
-          type: array
-          items:
-            type: string
-      example:
-        solution: openEHRSys
-        solution_version: v0.9
-        vendor: My-openEHR
-        restapi_specs_version: v1.0.3
-        conformance_profile: STANDARD
-        endpoints:
-          - /ehr
-          - /definition
-          - /query
-  responses:
-    200_options:
-      description: |
-        `200 OK` is returned when options and conformance statement was retrieved successfully.
-      headers:
-        Allow:
-          $ref: '#/components/headers/Allow'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Options'
-x-tagGroups:
-  - name: Docs
-    tags:
-      - Glossary_and_conventions
-      - Requests_and_responses
-      - Resources
-  - name: Endpoints
-    tags:
-      - Options
+  schemas: {}

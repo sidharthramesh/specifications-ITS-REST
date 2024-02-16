@@ -67,6 +67,9 @@
                 <li class="nav-item {{#if templateOptions.page_overview}} active {{/if}}">
                     <a class="nav-link mx-2 {{#if templateOptions.page_overview}} text-primary {{/if}}" href="overview.html">Overview{{#if templateOptions.page_overview}} <span class="sr-only">(current)</span>{{/if}}</a>
                 </li>
+                <li class="nav-item {{#if templateOptions.page_system}} active {{/if}}">
+                    <a class="nav-link mx-2 {{#if templateOptions.page_system}} text-primary {{/if}}" href="system.html">System API{{#if templateOptions.page_system}} <span class="sr-only">(current)</span>{{/if}}</a>
+                </li>
                 <li class="nav-item {{#if templateOptions.page_ehr}} active {{/if}}">
                     <a class="nav-link mx-2 {{#if templateOptions.page_ehr}} text-primary {{/if}}" href="ehr.html">EHR API{{#if templateOptions.page_ehr}} <span class="sr-only">(current)</span>{{/if}}</a>
                 </li>
@@ -122,9 +125,12 @@
         }
         $("div.api-info h1")
             .addClass("d-inline-block mx-1")
-            .after("<a href='computable/OAS/"+spec+"-validation.openapi.yaml' download='"+spec+"-validation.openapi.yaml' type='application/yaml' target='_blank' class='d-none d-xl-block btn btn-outline-primary btn-sm mx-1 align-baseline float-right' role='button' aria-pressed='true' data-toggle='tooltip' data-placement='bottom' title='Download YAML for validation purpose'>Download</a>")
-            .after("<a href='computable/OAS/"+spec+"-codegen.openapi.yaml' download='"+spec+"-codegen.openapi.yaml' type='application/yaml' target='_blank' class='d-none d-xl-block btn btn-outline-primary btn-sm mx-1 align-baseline float-right' role='button' aria-pressed='true' data-toggle='tooltip' data-placement='bottom' title='Download YAML for code-generate purpose'>Codegen</a>")
             .after("<span class='badge badge-" + statusClass + " align-top'>" + status + "</span>");
+        if (spec !== 'overview') {
+            $("div.api-info h1")
+                .after("<a href='computable/OAS/"+spec+"-validation.openapi.yaml' download='"+spec+"-validation.openapi.yaml' type='application/yaml' target='_blank' class='d-none d-xl-block btn btn-outline-primary btn-sm mx-1 align-baseline float-right' role='button' aria-pressed='true' data-toggle='tooltip' data-placement='bottom' title='Download YAML for validation purpose'>Download</a>")
+                .after("<a href='computable/OAS/"+spec+"-codegen.openapi.yaml' download='"+spec+"-codegen.openapi.yaml' type='application/yaml' target='_blank' class='d-none d-xl-block btn btn-outline-primary btn-sm mx-1 align-baseline float-right' role='button' aria-pressed='true' data-toggle='tooltip' data-placement='bottom' title='Download YAML for code-generate purpose'>Codegen</a>")
+        }
     });
 </script>
 </body>
