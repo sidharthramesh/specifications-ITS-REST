@@ -11,42 +11,7 @@ info:
   license:
     name: Creative Commons Attribution-NoDerivs 3.0 Unported
     url: https://creativecommons.org/licenses/by-nd/3.0/
-  description: |+
-    <table>
-        <colgroup>
-            <col style="width: 20%;">
-            <col style="width: 80%;">
-        </colgroup>
-        <thead>
-        <tr>
-            <th colspan="2">© 2018 - 2023 The openEHR Foundation</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td colspan="2">
-                The <a href="https://www.openEHR.org" target="_blank" rel="noopener">openEHR Foundation</a> is an independent, non-profit foundation, facilitating the sharing of health records by consumers and clinicians via open specifications, clinical models and open platform implementations.
-            </td>
-        </tr>
-        <tr>
-            <td><strong>Licence</strong></td>
-            <td><span class="image"><img src="https://specifications.openehr.org/images/cc-by-nd-88x31.png" alt="image"></span> Creative Commons Attribution-NoDerivs 3.0 Unported.
-                <a href="https://creativecommons.org/licenses/by-nd/3.0/" class="bare">https://creativecommons.org/licenses/by-nd/3.0/</a>
-            </td>
-        </tr>
-        <tr>
-            <td><strong>Support</strong></td>
-            <td>Issues: <a href="https://specifications.openehr.org/components/ITS/open_issues" target="_blank" rel="noopener">Problem Reports</a><br>
-                Web: <a href="https://specifications.openehr.org" target="_blank" rel="noopener">specifications.openEHR.org</a>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-
-    # Intro
-
-    ## Preface
-
+  description: |
     ### Purpose
 
     This specification describes service endpoints, resources and operations as well as details of requests and responses that interacts with System openEHR API in a RESTful manner.
@@ -55,6 +20,7 @@ info:
 
     Prerequisite documents for reading this document include:
 
+    - The [openEHR REST API Specifications Overview](overview.html)
     - The [openEHR Architecture Overview](https://specifications.openehr.org/releases/BASE/latest/architecture_overview.html)
 
     Related documents include:
@@ -70,19 +36,6 @@ info:
     Users are encouraged to comment on and/or advise on these paragraphs as well as the main content.
 
     The development version of this document can be found at <https://specifications.openehr.org/releases/ITS-REST/latest/resources.html>.
-
-    ### Feedback
-
-    Feedback may be provided on the [Implementation Technology Specifications forum](https://discourse.openehr.org/c/specifications/its/41).
-
-    Issues may be raised on the [specifications Problem Report tracker](https://openehr.atlassian.net/browse/SPECPR).
-
-    To see changes made due to previously reported issues, see the [ITS component Change Request tracker](https://specifications.openehr.org/components/ITS/history).
-
-    ### Conformance
-
-    tbd.
-
 servers:
   - url: https://{baseUrl}/v1
     description: An example openEHR server URL.
@@ -98,10 +51,11 @@ paths:
   /:
     options:
       operationId: options
-      summary: System Options and Conformance
+      summary: Options and Conformance
       description: |
         The `OPTIONS` HTTP method allows a client to determine the options and/or requirements associated with a resource, service or with the system, without implying a resource action.
-        Services SHOULD respond to this method with at least appropriate HTTP codes, headers and potentially with a payload revealing more details about themselves.
+
+        Services SHOULD respond to this method with the appropriate HTTP codes, headers and potentially with a payload revealing more details about themselves.
 
         Another use-case for this method is related to exposing service capabilities for a conformance manifest.
       tags:
